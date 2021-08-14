@@ -15,22 +15,20 @@ class homePage {
             aTagButton.setAttribute('style','button');
             aTagButton.innerHTML="#"+tag;
             aTagButton.className="aTagButton";  
-            aTagButton.thisTag=tag;
-            aTagButton.chosenTags=this.chosenTags; 
-            aTagButton.addEventListener('click', e=>{
-                let chosenTags=this.chosenTags;
-                let tag=e.target.thisTag;
-                //if the tag is in the chosenTags list : remove it
-                if (chosenTags.includes(tag)){ 
-                    chosenTags = chosenTags.filter(chosenTags => chosenTags !== tag);
-                }else{ //else add it
-                    chosenTags.push(tag);
-                }
-                this.chosenTags=chosenTags;
-                console.log(this.chosenTags);
-                this.filterChosenPhotographers();
-            } );
+            aTagButton.addEventListener('click', this.filterChosenTags.bind(aTagButton,tag,this));    
         }  
+    }
+
+    filterChosenTags(tag,homePage){
+        let chosenTags=homePage.chosenTags;
+        //if the tag is in the chosenTags list : remove it
+        if (chosenTags.includes(tag)){ 
+            chosenTags = chosenTags.filter(chosenTags => chosenTags !== tag);
+        }else{ //else add it
+            chosenTags.push(tag);
+        }
+        homePage.chosenTags=chosenTags;
+        homePage.filterChosenPhotographers();
     }
 
     filterChosenPhotographers(){
@@ -49,9 +47,14 @@ class homePage {
         while(document.getElementById("userChoiceOfPhotographers").firstChild) {
             document.getElementById("userChoiceOfPhotographers").removeChild(document.getElementById("userChoiceOfPhotographers").firstChild);
         }
-        for (let k=0;k<this.chosenPhotographers.length;k++){
-            let photographerFrame = this.createDiv(this.chosenPhotographers[k]);
-            document.getElementById("userChoiceOfPhotographers").appendChild(photographerFrame);
+        let numberOfChosenPhotographers=this.chosenPhotographers.length;
+        if(numberOfChosenPhotographers==0){
+            this.displayAllPhotographers();
+        }else{
+            for (let k=0;k<numberOfChosenPhotographers;k++){
+                let photographerFrame = this.createDiv(this.chosenPhotographers[k]);
+                document.getElementById("userChoiceOfPhotographers").appendChild(photographerFrame);
+            }
         }
     }
 
@@ -111,18 +114,7 @@ class homePage {
             aTagButton.setAttribute('style','button');
             aTagButton.innerHTML="#"+tag;
             aTagButton.className="aTagButton";
-            aTagButton.addEventListener('click', e=>{
-                let chosenTags=this.chosenTags;
-                let tag=e.target.thisTag;
-                //if the tag is in the chosenTags list : remove it
-                if (chosenTags.includes(tag)){ 
-                    chosenTags = chosenTags.filter(chosenTags => chosenTags !== tag);
-                }else{ //else add it
-                    chosenTags.push(tag);
-                }
-                this.chosenTags=chosenTags;
-                this.filterChosenPhotographers();
-            } );
+            aTagButton.addEventListener('click', this.filterChosenTags.bind(aTagButton,tag,this));
         }
         return photographerFrame;
     }
