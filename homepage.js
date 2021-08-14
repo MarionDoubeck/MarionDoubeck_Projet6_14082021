@@ -27,6 +27,7 @@ class homePage {
                     chosenTags.push(tag);
                 }
                 this.chosenTags=chosenTags;
+                console.log(this.chosenTags);
                 this.filterChosenPhotographers();
             } );
         }  
@@ -49,7 +50,7 @@ class homePage {
             document.getElementById("userChoiceOfPhotographers").removeChild(document.getElementById("userChoiceOfPhotographers").firstChild);
         }
         for (let k=0;k<this.chosenPhotographers.length;k++){
-            let photographerFrame = this.chosenPhotographers[k].createDiv();
+            let photographerFrame = this.createDiv(this.chosenPhotographers[k]);
             document.getElementById("userChoiceOfPhotographers").appendChild(photographerFrame);
         }
     }
@@ -101,9 +102,28 @@ class homePage {
         //création d'une div pour les filtres:
         let tags=document.createElement('div');
         photographerFrame.appendChild(tags);
-        
-        tags.innerHTML=photographer.tags;
         tags.className="tags";
+        for(let tag of photographer.tags){
+            let aTag=document.createElement('li');
+            tags.appendChild(aTag)
+            let aTagButton=document.createElement('button');
+            aTag.appendChild(aTagButton)
+            aTagButton.setAttribute('style','button');
+            aTagButton.innerHTML="#"+tag;
+            aTagButton.className="aTagButton";
+            aTagButton.addEventListener('click', e=>{
+                let chosenTags=this.chosenTags;
+                let tag=e.target.thisTag;
+                //if the tag is in the chosenTags list : remove it
+                if (chosenTags.includes(tag)){ 
+                    chosenTags = chosenTags.filter(chosenTags => chosenTags !== tag);
+                }else{ //else add it
+                    chosenTags.push(tag);
+                }
+                this.chosenTags=chosenTags;
+                this.filterChosenPhotographers();
+            } );
+        }
         return photographerFrame;
     }
 }
