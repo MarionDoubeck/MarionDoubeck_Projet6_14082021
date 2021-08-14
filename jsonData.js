@@ -31,16 +31,17 @@ class JsonData{
         let numberOfMedia=myJsonData.media.length;
         this.allMedia.length=numberOfMedia;
         for (let k=0;k<numberOfMedia;k++){
+            let type=Object.keys(myJsonData.media[k])[3];
             allMediaData[k]=new MediaData(
                 myJsonData.media[k].id,
                 myJsonData.media[k].photographerId,
                 myJsonData.media[k].title,
-                myJsonData.media[k].mediaName,
+                myJsonData.media[k][type],
                 myJsonData.media[k].tags,
                 myJsonData.media[k].likes,
                 myJsonData.media[k].date,
                 myJsonData.media[k].price,
-                Object.keys(myJsonData.media[k])[3]
+                type
             )
             this.allMedia[k]=new FactoryMedia(allMediaData[k])
         }

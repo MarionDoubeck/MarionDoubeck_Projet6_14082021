@@ -13,30 +13,30 @@ class MediaData{
 }
 
 class Image{
-    constructor(data){
-        this.id=data.id;
-        this.photographerId=data.photographerId;
-        this.title=data.title;
-        this.image=data.image;
-        this.tags=data.tags;
-        this.likes=data.likes;
-        this.date=data.date;
-        this.price=data.price;
-        this.type=data.type;
+    constructor(mediaData){
+        this.id=mediaData.id;
+        this.photographerId=mediaData.photographerId;
+        this.title=mediaData.title;
+        this.image=mediaData.mediaName;
+        this.tags=mediaData.tags;
+        this.likes=mediaData.likes;
+        this.date=mediaData.date;
+        this.price=mediaData.price;
+        this.type=mediaData.type;
     }
 }
 
 class Video{
-    constructor(data){
-        this.id=data.id;
-        this.photographerId=data.photographerId;
-        this.title=data.title;
-        this.video=data.video;
-        this.tags=data.tags;
-        this.likes=data.likes;
-        this.date=data.date;
-        this.price=data.price;
-        this.type=data.type;
+    constructor(mediaData){
+        this.id=mediaData.id;
+        this.photographerId=mediaData.photographerId;
+        this.title=mediaData.title;
+        this.video=mediaData.mediaName;
+        this.tags=mediaData.tags;
+        this.likes=mediaData.likes;
+        this.date=mediaData.date;
+        this.price=mediaData.price;
+        this.type=mediaData.type;
     }
 }
 
