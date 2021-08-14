@@ -15,6 +15,7 @@ class JsonData{
         let allPhotographersData=[];
         let allMediaData=[];
         let numberOfPhotographers=myJsonData.photographers.length;
+        this.allPhotographers.length=numberOfPhotographers;
         for (let k=0;k<numberOfPhotographers;k++){
             allPhotographersData[k]=new PhotographerData(
                 myJsonData.photographers[k].name,
@@ -28,6 +29,7 @@ class JsonData{
             this.allPhotographers[k]=new Photographer(allPhotographersData[k]);
         }
         let numberOfMedia=myJsonData.media.length;
+        this.allMedia.length=numberOfMedia;
         for (let k=0;k<numberOfMedia;k++){
             allMediaData[k]=new MediaData(
                 myJsonData.media[k].id,
