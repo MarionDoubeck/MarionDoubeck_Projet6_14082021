@@ -251,3 +251,25 @@ h1{
     background-color: none;
     font-size: medium;
 }
+
+#totalLikes{
+    position: fixed;
+    bottom: 0%;
+    right: 5%;
+    background-color: #DB8876;
+    height: 40px;
+    width: 250px;
+    font-size: 24px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#space{
+    margin-left: 10px;
+    margin-right: 50px;
+}
+
+#totalLikes .fas{
+    font-size: 20px;
+    color: black;
+}

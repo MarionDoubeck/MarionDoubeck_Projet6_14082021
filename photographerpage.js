@@ -77,6 +77,7 @@ class PhotographerPage{
         this.sortedMedia=this.photographerSMedia;
         this.createSortingMenu();
         this.displayMedias();
+        this.displayRectangle();
     }
 
     createSortingMenu(){
@@ -171,12 +172,23 @@ class PhotographerPage{
         let numberOfLikes=document.createElement('div');
         numberOfLikes.setAttribute("id",media.id)
         likes.appendChild(numberOfLikes);
-        numberOfLikes.innerHTML=media.likes; 
+        this.displayMediaLikes(numberOfLikes,media);
         let heartButton=document.createElement('button');
         likes.appendChild(heartButton);
         heartButton.className="fas fa-heart";
         heartButton.classList.add("heartButton");
-        heartButton.addEventListener('click',()=>media.addLike());
+        heartButton.addEventListener('click',this.addLike.bind(heartButton,this,media,numberOfLikes));
+    }
+    
+    displayMediaLikes(numberOfLikes,media){
+        numberOfLikes.innerHTML=media.likes; 
+    }
+
+    addLike(photographerPage,media,numberOfLikes){
+        photographerPage.totalLikes++;
+        media.likes++;
+        photographerPage.displayMediaLikes(numberOfLikes,media);
+        photographerPage.displayRectangle();
     }
 
     openCarousel(i,media,myphotographerPage){
@@ -184,9 +196,9 @@ class PhotographerPage{
         carousel.openCarousel();
     }
 
-    displayRectangle(likes,price){
+    displayRectangle(){
         let rectangle=document.getElementById('totalLikes');
-        rectangle.innerHTML=likes+"fas fa-heart"+"     "+price+" € / jour ";
+        rectangle.innerHTML=this.totalLikes+"<span class='fas fa-heart' id=space></span>"+this.photographer.price+" € / jour ";
     }
 }
 
