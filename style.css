@@ -87,3 +87,167 @@ h1{
     background-color: white;
     font-size: 12px;
 }
+
+
+
+/*/////on photographer page////////*/
+#photographerDetails{
+    margin-top: 50px;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: right;
+    align-content: center; /*NE MARCHE PAS*/
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.photographersNameONPP{
+    color: #D3573C;
+    font-size: 64px;
+}
+.placeONPP{
+    color:#901C1C;
+    font-size: 26px;
+}
+
+.tagLineONPP{
+    color: #525252;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.tagsONPP{
+    display: flex;
+    list-style-type: none;
+    justify-content: left;
+    padding-left: 0;
+}
+
+.contactMeONPP{
+    height:60px;
+    border-radius: 5px;
+    font-family: 'DM Sans';
+    font-size: 20px;
+    background-color: #901C1C;
+    color:white;
+    margin-left: 10%;
+    margin-right: 40%;
+}
+
+.portraitONPP{
+    height: 180px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/*///////////////////////*/
+.instructionsONPP{
+    margin-left: 30px;
+    font-family: 'DM sans';
+    font-size: 20px;
+    font-weight: 700;
+}
+#sortingMenu{
+    color: white;
+    background-color: #901C1C;
+}
+
+#media{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.mediaBlock{
+    width: 30%;
+    margin-bottom: 5%;
+
+}
+.image{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.video{
+    width:100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.titleAndLikes{
+    display: flex;
+    color:#901C1C;
+    justify-content: space-between;
+}
+
+
+
+.likesDiv{
+    display: flex;
+}
+
+#photographerPageBody{
+    position: relative;
+}
+
+.carousel{
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: white;
+}
+
+.carouselImage{
+    height:100%;
+    width: 100%;
+    object-fit: contain;
+    background-color: white;
+}
+.carouselVideo{
+    height:100%;
+    width: 100%;
+    object-fit: contain;
+    background-color: white;
+}
+
+.fas{
+    color: #901C1C;
+    font-size: 50px;
+    background-color: transparent;
+    border: none;
+}
+
+.prevButton{
+    position: fixed;
+    left: 3%;
+    top: 45%;
+}
+
+.nextButton{
+    position: fixed;
+    left: 95%;
+    top: 45%;
+}
+
+.closeButton{
+    position: fixed;
+    left:95%;
+    top: 5%;
+}
+
+.closeDiv{
+    display: none;
+}
+
+.heartButton{
+    border:none;
+    background-color: none;
+    font-size: medium;
+}

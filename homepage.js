@@ -77,6 +77,7 @@ class homePage {
         photographerFrame.appendChild(linkToPhotographerPage);
         linkToPhotographerPage.className="linkToPhotographerPage";
         linkToPhotographerPage.setAttribute('href',"photographerPage.html?idphotographer="+photographer.id);
+        
         //dans le lien, créer une div pour le portrait :
         let portrait=document.createElement('div');
         linkToPhotographerPage.appendChild(portrait);
