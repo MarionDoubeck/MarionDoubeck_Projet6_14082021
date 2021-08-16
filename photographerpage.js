@@ -69,6 +69,7 @@ class PhotographerPage{
         photographerDetails.appendChild(contactMe);
         contactMe.innerHTML="Contactez-moi";
         contactMe.className="contactMeONPP";
+        contactMe.addEventListener('click',this.openContactForm.bind(contactMe,this.photographer.name));
         /////////////////////////////////
         let portrait=document.createElement('div');
         photographerDetails.appendChild(portrait);
@@ -194,6 +195,40 @@ class PhotographerPage{
     openCarousel(i,media,myphotographerPage){
         let carousel=new Carousel(i,media,myphotographerPage.sortedMedia,myphotographerPage.photographer.name);
         carousel.openCarousel();
+    }
+
+    openContactForm(photographerName){
+        let contactForm=document.createElement('div');
+        contactForm.className="contactForm";
+        let photographerPageBody=document.getElementById('photographerPageBody');
+        photographerPageBody.appendChild(contactForm);
+
+        let contactFormTitle=document.createElement('div');
+        contactForm.appendChild(contactFormTitle);
+        let contactFormName=document.createElement('div');
+        contactFormTitle.appendChild(contactFormName);
+        contactFormName.className="contactFormName";
+        contactFormName.innerHTML="Contactez-moi"+'<br>'+photographerName;
+        let closeFormButton=document.createElement('button');
+        contactFormTitle.appendChild(closeFormButton);
+        closeFormButton.className="fas fa-times"; 
+        closeFormButton.id="closeFormButton";
+        closeFormButton.addEventListener('click',()=>contactForm.className="closeDiv");
+
+        let contactFormContent=document.createElement('form');
+        contactForm.appendChild(contactFormContent);
+        contactFormContent.className="contactFormContent";
+        contactFormContent.innerHTML=
+            '<input type="hidden" name="contact_number">'+'<br>'+
+            '<label>Prénom</label>'+'<br>'+
+            '<input type="text" name="user_firstname">'+'<br>'+
+            '<label>Nom</label>'+'<br>'+
+            '<input type="text" name="user_familyname">'+'<br>'+
+            '<label>Email</label>'+'<br>'+
+            '<input type="email" name="user_email">'+'<br>'+
+            '<label>Votre message</label>'+'<br>'+
+            '<textarea name="message" id="message"></textarea>'+'<br>'+
+            '<input type="submit" value="Envoyez" "id=submitButton">';
     }
 
     displayRectangle(){

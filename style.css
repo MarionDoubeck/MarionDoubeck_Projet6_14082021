@@ -194,6 +194,56 @@ h1{
     position: relative;
 }
 
+.contactForm{
+    position:fixed;
+    width:50%;
+    background-color:#DB8876;
+    top:5%;
+    left:25%;
+}
+
+    .contactFormTitle{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+        .contactFormName{
+            margin-left: 5%;
+            font-size: 50px;
+        }
+        #closeFormButton{
+            color: white;
+        }
+
+.contactFormContent{
+    margin-left: 5%;
+    font-size: 30px;
+}
+
+    input{
+        width: 90%;
+        height: 30px;
+        font-size: 30px;
+    }
+
+    #message{
+        width: 90%;
+        height: 100px;
+    }
+
+    #submitButton{
+        font-size: 10px;
+        background-color: #901C1C;
+        color: white;
+        width: 20px;
+        margin-left: 5%;
+        margin-bottom: 5%;
+        height: 50px;
+    }
+
+
+
+
 .carousel{
     position: fixed;
     left: 0%;
