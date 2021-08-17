@@ -4,21 +4,25 @@ banner a{
     display: flex;
     text-decoration: none;
 }
+
 banner img{
-    height: 0.65em;
+    height: 0.6em;
     position: relative;
     top:0.3em;
 }
 
 #tagsList{
     margin-top: 0;
+    width: 80%;
     display: flex;
     list-style-type: none;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 h1{
     color:#901C1C;
-    font-size: 3em;
+    font-size: 2em;
     position: absolute;
     top:0.1em;
     right: 0.2em;
@@ -27,13 +31,14 @@ h1{
 #userChoiceOfPhotographers{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .homePagePhotographerFrame{
-    width:400px;
+    width:90%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin-top: 50px;
 }
@@ -42,43 +47,43 @@ h1{
 .linkToPhotographerPage{
     display: flex;
     flex-direction: column;
-    align-items: center;
     text-decoration: none;
+    align-items: center;
 }
 
 .homePagePortrait{
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
+    justify-self: center;
+    width: 90%;
+    padding-left: 5%;
+    padding-top: 5%;
+    aspect-ratio: 1/1;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .homePageName{
     color: #D3573C;
     font-size: 36px;
-    
 }
 
 .homePagePlace{
     color:#901C1C;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .homePageTagline{
-    font-size: 15px;
+    font-size: 18px;
 }
 
 .homePagePrice{
     color: #757575;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .tags{
     list-style-type: none;
     display: flex;
-    
-    /* !!!!!!!!! NE MARCHE PAS !!!!!!!!! !!!!!!!!! !!!!!!!!! */
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .aTagButton{
@@ -87,37 +92,49 @@ h1{
     box-sizing: border-box;
     border-radius: 11px;
     background-color: white;
-    font-size: 12px;
+    font-size: 18px;
+    margin-right: 0.5em;
+    margin-top: 1em;
+    justify-self: center;
 }
 
 
 
 /*/////on photographer page////////*/
 #photographerDetails{
-    margin-top: 50px;
-    background-color: #fafafa;
+    width: 100%;
+    margin-top: 4em;
     display: flex;
-    justify-content: right;
-    align-items: center; 
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 20px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
 }
+
+.photographerInformations{
+    width: 59%;
+}
+.photographerInformations .aTagButton{
+    font-size: 1em;
+    margin-top: 3em;
+}
+
+.portraitDivONPP{
+    width: 40%;
+}
+
 .photographersNameONPP{
     color: #D3573C;
-    font-size: 64px;
+    font-size: 4em;
 }
 .placeONPP{
     color:#901C1C;
-    font-size: 26px;
+    font-size: 2em;
 }
 
 .tagLineONPP{
     color: #525252;
-    font-size: 20px;
-    margin-top: 20px;
+    font-size: 1em;
+    margin-top: 1em;
 }
 
 .tagsONPP{
@@ -128,18 +145,22 @@ h1{
 }
 
 .contactMeONPP{
-    height:60px;
+    position: fixed;
+    bottom: 1em;
+    left:15%;
+    width:50%;
     border-radius: 5px;
     font-family: 'DM Sans';
-    font-size: 20px;
+    font-size: 2em;
     background-color: #901C1C;
     color:white;
     margin-left: 10%;
     margin-right: 40%;
 }
 
+
 .portraitONPP{
-    height: 180px;
+    width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
     border-radius: 50%;
@@ -147,14 +168,10 @@ h1{
 
 /*///////////////////////*/
 .instructionsONPP{
-    margin-left: 30px;
-    font-family: 'DM sans';
-    font-size: 20px;
-    font-weight: 700;
+    display: none;
 }
 #sortingMenu{
-    color: white;
-    background-color: #901C1C;
+    display: none;
 }
 
 #media{
@@ -164,20 +181,22 @@ h1{
 }
 
 .mediaBlock{
-    width: 30%;
+    width: 100%;
     margin-bottom: 5%;
-
+    margin-top: 5%;
 }
 .image{
     width: 100%;
-    aspect-ratio: 1/1;
+    aspect-ratio: 2/1.2;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 .video{
     width:100%;
-    aspect-ratio: 1/1;
+    aspect-ratio: 2/1.2;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 .titleAndLikes{
@@ -198,10 +217,11 @@ h1{
 
 .contactForm{
     position:fixed;
-    width:50%;
+    top:0%;
+    left:0%;
+    width:100%;
+    height: 300%;
     background-color:#DB8876;
-    top:5%;
-    left:25%;
 }
 
     .contactFormTitle{
@@ -211,15 +231,18 @@ h1{
     }
         .contactFormName{
             margin-left: 5%;
-            font-size: 50px;
+            font-size: 3em;
         }
         #closeFormButton{
             color: white;
+            position: fixed;
+            top:5%;
+            right: 5%;
         }
 
 .contactFormContent{
     margin-left: 5%;
-    font-size: 30px;
+    font-size: 1.5em;
 }
 
     input{
@@ -230,17 +253,15 @@ h1{
 
     #message{
         width: 90%;
-        height: 100px;
+        height: 150px;
     }
 
     #submitButton{
-        font-size: 10px;
+        font-size: 1em;
         background-color: #901C1C;
         color: white;
-        width: 20px;
         margin-left: 5%;
         margin-bottom: 5%;
-        height: 50px;
     }
 
 
@@ -278,19 +299,19 @@ h1{
 
 .prevButton{
     position: fixed;
-    left: 3%;
+    left: 0%;
     top: 45%;
 }
 
 .nextButton{
     position: fixed;
-    left: 95%;
+    left: 92%;
     top: 45%;
 }
 
 .closeButton{
     position: fixed;
-    left:95%;
+    left:90%;
     top: 5%;
 }
 
@@ -305,23 +326,6 @@ h1{
 }
 
 #totalLikes{
-    position: fixed;
-    bottom: 0%;
-    right: 5%;
-    background-color: #DB8876;
-    height: 40px;
-    width: 250px;
-    font-size: 24px;
-    padding-top: 10px;
-    padding-left: 10px;
+    display: none;
 }
 
-#space{
-    margin-left: 10px;
-    margin-right: 50px;
-}
-
-#totalLikes .fas{
-    font-size: 20px;
-    color: black;
-}

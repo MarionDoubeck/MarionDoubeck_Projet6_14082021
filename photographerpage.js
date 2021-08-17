@@ -36,6 +36,7 @@ class PhotographerPage{
         let photographerDetails=document.getElementById("photographerDetails");
         let photographerInformations=document.createElement('div');
         photographerDetails.appendChild(photographerInformations);
+        photographerInformations.className="photographerInformations";
         /////////////////////////////////
         let name=document.createElement('div');
         photographerInformations.appendChild(name);
@@ -73,6 +74,7 @@ class PhotographerPage{
         /////////////////////////////////
         let portrait=document.createElement('div');
         photographerDetails.appendChild(portrait);
+        portrait.className="portraitDivONPP";
         portrait.innerHTML='<img class=portraitONPP src="Sample Photos/Photographers ID Photos/'+this.photographer.portrait+'"></img>';
         /////////////////////////////////
         this.sortedMedia=this.photographerSMedia;

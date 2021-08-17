@@ -65,6 +65,7 @@ class homePage {
         }
         for (let k=0;k<this.allPhotographers.length;k++){
             let photographerFrame = this.createDiv(this.allPhotographers[k]);
+            photographerFrame.className="homePagePhotographerFrame";
             document.getElementById("userChoiceOfPhotographers").appendChild(photographerFrame);
         }
     }
@@ -81,6 +82,7 @@ class homePage {
         //dans le lien, créer une div pour le portrait :
         let portrait=document.createElement('div');
         linkToPhotographerPage.appendChild(portrait);
+        portrait.className="portraitDiv";
         let linkToPhotographerPagePhoto='<img class=homePagePortrait src="Sample Photos/Photographers ID Photos/'+photographer.portrait+'"></img>';
         portrait.innerHTML=linkToPhotographerPagePhoto;   
         //dans le lien, créer une div pour le nom du photographe :
